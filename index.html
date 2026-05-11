@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSV Privacy Cleaner</title>
+    <meta
+      name="description"
+      content="Clean CSV files offline: detect delimiters, normalize headers, remove duplicates, mask PII, and export without uploading data."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="CSV cleaner workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Offline CSV utility</p>
+            <h1>CSV Privacy Cleaner</h1>
+          </div>
+          <button id="download" class="primary" type="button">Download cleaned CSV</button>
+        </header>
+
+        <div class="tool-grid">
+          <section class="input-panel" aria-label="CSV input">
+            <div class="panel-head">
+              <label class="file-picker">
+                <input id="file" type="file" accept=".csv,text/csv" />
+                <span>Open CSV</span>
+              </label>
+              <select id="delimiter" aria-label="Delimiter">
+                <option value="auto">Auto delimiter</option>
+                <option value=",">Comma</option>
+                <option value=";">Semicolon</option>
+                <option value="	">Tab</option>
+                <option value="|">Pipe</option>
+              </select>
+            </div>
+            <textarea id="input" spellcheck="false" aria-label="CSV text"></textarea>
+            <div class="actions">
+              <label><input id="normalize" type="checkbox" checked disabled /> Normalize headers</label>
+              <label><input id="dedupe" type="checkbox" checked /> Remove duplicates</label>
+              <label><input id="mask" type="checkbox" checked /> Mask likely PII</label>
+              <button id="run" type="button">Clean</button>
+            </div>
+          </section>
+
+          <aside class="side-panel" aria-label="Cleaning summary">
+            <p id="status" class="status"></p>
+            <div id="stats" class="stats"></div>
+            <div class="mask-box">
+              <h2>Masked fields</h2>
+              <div id="mask-fields" class="chips"></div>
+            </div>
+            <ul id="warnings" class="warnings"></ul>
+          </aside>
+        </div>
+
+        <section class="preview" aria-label="Cleaned CSV preview">
+          <div class="table-wrap">
+            <table id="preview-table"></table>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>

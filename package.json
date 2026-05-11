@@ -1,0 +1,20 @@
+{
+  "name": "csv-privacy-cleaner",
+  "version": "1.0.0",
+  "description": "Offline browser tool to clean, dedupe, mask, and export CSV files without uploading data.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "start": "npx --yes http-server . -p 4173 -c-1"
+  },
+  "keywords": [
+    "csv",
+    "privacy",
+    "offline",
+    "pii",
+    "data-cleaning"
+  ],
+  "author": "dule-ba",
+  "license": "MIT",
+  "devDependencies": {}
+}
