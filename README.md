@@ -42,7 +42,8 @@ Small teams often pass CSV exports between CRMs, ad platforms, no-code tools, an
 If this saves you time, support the project:
 
 - GitHub Sponsors: https://github.com/sponsors/dule-ba
-- Buy Me a Coffee: https://buymeacoffee.com/duleba
+
+Note: Dule needs to enable GitHub Sponsors on the `dule-ba` account before sponsorship payments can be accepted.
 
 ## License
 
